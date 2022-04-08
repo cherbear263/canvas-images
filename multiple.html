@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML5 Canvas Tutorial</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      input[type="file"]{
+        display: none;
+      }
+      figure {
+        width: 45%;
+      }
+      figcaption {
+        text-align: center;
+        font-size: 2.4vmin;
+        margin-top: 0.5vmin;
+
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-200">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav class="h-20">
+      <div class="w-[90%] text-center mx-auto py-5 font-semibold text-lg">
+        <a class="px-3" href="/">Draw and Download</a>
+        <a class="px-3" href="/resizeOne.html">Resize One</a>
+        <a class="px-3  border-2 border-b-sky-500" href="/multiple.html">Preview Multiple</a>
+      </div>  
+    </nav>  
+    </nav>
+    <div class="min-w-[450px] max-w-6xl relative mx-auto my-50 rounded p-6 bg-slate-100 shadow-xl text-center">
+      <h3 class="text-5xl font-sans font-semibold text-gray-600 mt-10 mb-14">Preview Multiple Images</h3>
+        
+        <div class="max-w-screen-lg mx-auto my-5">
+          <div>
+            <input  type="file" id="file-input" multiple accept="image/png, image/jpeg" onchange="preview()"/>
+            <label for="file-input" class="block relative cursor-pointer rounded-sm bg-sky-500 text-xl text-center text-white font-normal w-[300px] px-2 py-3 mx-auto">Select Photos:</label>
+            <p id="num-of-files" class="px-3 py-2">No files chosen</p>
+          </div>
+
+            <div id="images" class="flex flex-wrap gap-2 justify-evenly max-w-[90%]  relative mx-auto">
+
+            </div>
+          <div class="w-[150px]">
+            <canvas class="max-w-full" id="canvas2" width="500" height="500"></canvas>
+          </div>
+
+        
+
+      </div>
+    </div>
+    </div>
+    <script src="js/previewImages.js"></script>
+  </body>
+</html>

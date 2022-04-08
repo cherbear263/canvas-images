@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML5 Canvas</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-200">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <nav class="h-20">
+      <div class="w-[90%] text-center mx-auto py-5 font-semibold text-lg">
+        <a class="px-3" href="/">Draw and Download</a>
+        <a class="px-3  border-2 border-b-sky-500" href="/resizeOne.html">Resize One</a>
+        <a class="px-3" href="/multiple.html">Preview Multiple</a>
+      </div>  
+    </nav>
+  
+    <hr />
+    <div class="min-w-[450px] max-w-6xl relative mx-auto my-50 rounded p-6 bg-slate-100 shadow-xl text-center"
+    >
+      <h3 class="text-5xl font-sans font-semibold text-gray-600 mt-10 mb-14">Image upload and resize</h3>
+      <label for="maxwInput" class="font-semibold text-lg">Enter width of resized photo:</label>
+      <input class="px-3 py-3 w-[80px] border-2 border-sky-500" type="text" id="maxwInput" onchange="changeWidth(value)">
+      <div class="w-[80%] mx-auto text-left">
+        <p class="mt-5">This one will upload a single photo. It will automatically resize to a max width of <span id="viewWidth"></span></p>
+        <p>** note that the preview size will not change. Only the size of the photo, which you can download by clicking on it and choosing "save image as"</p>
+      </div>
+
+      <div class="flex my-5 justify-evenly">
+        <div>
+          <div>
+            <label for="uploader">Select file:</label>
+            <input type="file" id="uploader" />  </div>
+          <div class="w-[150px]">
+            <canvas class="max-w-full" id="canvas2" width="500" height="500"></canvas>
+          </div>
+
+        </div>
+        <div>
+          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">aspect ratio of selected file: <span id="aspectRatio"></span></p>
+          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">Orginal width and height: <span id="originalWH"></span></p>
+          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">New width and height: <span id="resizedWH"></span></p>
+
+        </div>
+
+        
+
+      </div>
+    </div>
+    </div>
+    <script>
+      // ********************** upload and resize an image ****************/
+      // the displayed canvas can be limited by the parent div with max-width and not affect the canvas size
+      
+      const canvas2 = document.getElementById('canvas2')
+      // you need the context in order to draw to the canvas
+      const ctx2 = canvas2.getContext('2d')
+      const aspectRatio = document.querySelector("#aspectRatio")
+      const viewWidth = document.querySelector("#viewWidth")
+      let maxwInput = document.querySelector("#maxwInput");
+      maxwInput.value = 512
+      maxWidth = maxwInput.value
+      viewWidth.innerHTML = `${maxWidth}px`;
+      const reader = new FileReader()
+      const img = new Image()
+      const uploadImage = (e) => {
+        reader.onload = () => {
+          img.onload = () => {
+            // get aspect ratio
+            ratio = img.width / img.height
+            const wh = `${img.width}px x ${img.height}px`
+            const originalWH = document.querySelector("#originalWH")
+            originalWH.innerHTML = wh
+            // display on screen
+            aspectRatio.innerHTML = ratio
+            // use the ratio to determine the new height based on maxWidth
+            const height = maxWidth / ratio
+            const resized = `${maxWidth}px x ${height.toFixed(1)}px`
+            const resizedWH = document.querySelector("#resizedWH")
+            resizedWH.innerHTML = resized
+            // image will be placed to top left (0,0)
+            canvas2.width = maxWidth
+            canvas2.height = height
+            ctx2.drawImage(img, 0,0, maxWidth, height)
+          };
+          img.src = reader.result
+        }
+        // read contents of image (first file)
+        reader.readAsDataURL(e.target.files[0])
+      };
+      const imageLoader = document.getElementById('uploader')
+      imageLoader.addEventListener('change', uploadImage)
+
+      function changeWidth(width) {
+        maxWidth = width
+        viewWidth.innerHTML = `${maxWidth}px`;
+      }
+    </script>
+  </body>
+</html>

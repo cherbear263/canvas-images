@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML5 Canvas</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+  </head>
+  <body class="bg-slate-200">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div id="navbar1"></div>
+    <div id="navbar2"></div>
+    <nav class="h-20">
+      <div class="w-[90%] text-center mx-auto py-5 font-semibold text-lg">
+        <a class="px-3 border-2 border-b-sky-500" href="/">Draw and Download</a>
+        <a class="px-3" href="/resizeOne.html">Resize One</a>
+        <a class="px-3" href="/multiple.html">Preview Multiple</a>
+      </div>
+    </nav>
+    <div
+      class="min-w-[450px] max-w-6xl relative mx-auto my-50 rounded p-6 bg-slate-100 shadow-xl text-center"
+    >
+      <h3 class="text-5xl font-sans font-semibold text-gray-600 mt-10 mb-14">
+        Copy Canvas into an Image
+      </h3>
+      <div class="my-5 text-left">
+        <p>This will draw shapes on the canvas.</p>
+        <p>
+          Clicking on "display" will capture the canvas as an image and display
+          in an img tag
+        </p>
+        <p>Clicking on "download" will download the image as a png.</p>
+      </div>
+      <div class="flex my-5 justify-center">
+        <button
+          type="button"
+          class="px-4 py-2 bg-sky-400 text-white mx-2"
+          id="btnDisplay"
+        >
+          Display
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 bg-sky-400 text-white mx-2"
+          id="btnDownload"
+        >
+          Download
+        </button>
+      </div>
+
+      <hr />
+      <div class="flex my-5 justify-center">
+        <div>
+          <h2 class="text-center">Canvas</h2>
+          <canvas
+            id="myCanvas"
+            width="400"
+            height="250"
+            class="border-2 border-gray-500 ml-10"
+          ></canvas>
+        </div>
+        <div>
+          <h2 class="text-center">Image</h2>
+          <img src="" id="imgConverted" class="border-2 border-sky-500 ml-4" />
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <script src="js/drawDownload.js"></script>
+  </body>
+</html>
