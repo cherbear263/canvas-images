@@ -3,6 +3,7 @@
 ## About the project
 
 Some examples of simple ways to manipulate images using HTML5 canvas and javascript. I'm working my way towards resizing multiple images before submitting to a server
+[View Canvas-Images live](https://cherbear263.github.io/canvas-images/)
 
 ### features
 
