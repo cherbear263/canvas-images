@@ -27,3 +27,7 @@ To watch and reload styles:
 ## Acknowledgements
 
 - Chris Dixon did a fantastic Youtube video on HTML5 upload and download [HTML5 upload and download](https://www.youtube.com/watch?v=sA07GElhqzg). This is what inspired me to look for other ways to manipulate images
+
+## todo
+
+Landscape images are not resizing properly.
