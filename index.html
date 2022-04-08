@@ -10,8 +10,9 @@
     <title>HTML5 Canvas</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Change base
-    <base href="https://cherbear263.github.io/canvas-images/" /> -->
+    <!-- SET BASE URL FOR GH PAGES-->
+    <base href="https://cherbear263.github.io/canvas-images/"/>
+
     <link type="text/css" rel="stylesheet" href="dist/output.css">
     <style></style>
   </head>
@@ -34,7 +35,7 @@
     <div
       class="min-w-[450px] max-w-6xl relative mx-auto my-50 rounded p-6 bg-slate-100 shadow-xl text-center"
     >
-      <h3 class="text-5xl font-sans font-semibold text-gray-600 mt-10 mb-14">
+      <h3 class="mt-10 font-sans text-5xl font-semibold text-gray-600 mb-14">
         Copy Canvas into an Image
       </h3>
       <div class="my-5 text-left">
@@ -45,17 +46,17 @@
         </p>
         <p>Clicking on "download" will download the image as a png.</p>
       </div>
-      <div class="flex my-5 justify-center">
+      <div class="flex justify-center my-5">
         <button
           type="button"
-          class="px-4 py-2 bg-sky-400 text-white mx-2"
+          class="px-4 py-2 mx-2 text-white bg-sky-400"
           id="btnDisplay"
         >
           Display
         </button>
         <button
           type="button"
-          class="px-4 py-2 bg-sky-400 text-white mx-2"
+          class="px-4 py-2 mx-2 text-white bg-sky-400"
           id="btnDownload"
         >
           Download
@@ -63,19 +64,19 @@
       </div>
 
       <hr />
-      <div class="flex my-5 justify-center">
+      <div class="flex justify-center my-5">
         <div>
           <h2 class="text-center">Canvas</h2>
           <canvas
             id="myCanvas"
             width="400"
             height="250"
-            class="border-2 border-gray-500 ml-10"
+            class="ml-10 border-2 border-gray-500"
           ></canvas>
         </div>
         <div>
           <h2 class="text-center">Image</h2>
-          <img src="" id="imgConverted" class="border-2 border-sky-500 ml-4" />
+          <img src="" id="imgConverted" class="ml-4 border-2 border-sky-500" />
         </div>
       </div>
       <hr />

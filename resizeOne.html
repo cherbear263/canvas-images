@@ -10,8 +10,9 @@
     <title>HTML5 Canvas</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Change base
-    <base href="https://cherbear263.github.io/canvas-images/" /> -->
+    <!-- SET BASE URL FOR GH PAGES-->
+    <base href="https://cherbear263.github.io/canvas-images/"/>
+
     <link type="text/css" rel="stylesheet" href="dist/output.css">
   </head>
   <body class="bg-slate-200">
@@ -35,8 +36,8 @@
     <hr />
     <div class="min-w-[450px] max-w-6xl relative mx-auto my-50 rounded p-6 bg-slate-100 shadow-xl text-center"
     >
-      <h3 class="text-5xl font-sans font-semibold text-gray-600 mt-10 mb-14">Image upload and resize</h3>
-      <label for="maxwInput" class="font-semibold text-lg">Enter width of resized photo:</label>
+      <h3 class="mt-10 font-sans text-5xl font-semibold text-gray-600 mb-14">Image upload and resize</h3>
+      <label for="maxwInput" class="text-lg font-semibold">Enter width of resized photo:</label>
       <input class="px-3 py-3 w-[80px] border-2 border-sky-500" type="text" id="maxwInput" onchange="changeWidth(value)">
       <div class="w-[80%] mx-auto text-left">
         <p class="mt-5">This one will upload a single photo. It will automatically resize to a max width of <span id="viewWidth"></span></p>
@@ -54,9 +55,9 @@
 
         </div>
         <div>
-          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">aspect ratio of selected file: <span id="aspectRatio"></span></p>
-          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">Orginal width and height: <span id="originalWH"></span></p>
-          <p class="mt-4 text-lg font-sans font-semibold text-gray-600">New width and height: <span id="resizedWH"></span></p>
+          <p class="mt-4 font-sans text-lg font-semibold text-gray-600">aspect ratio of selected file: <span id="aspectRatio"></span></p>
+          <p class="mt-4 font-sans text-lg font-semibold text-gray-600">Orginal width and height: <span id="originalWH"></span></p>
+          <p class="mt-4 font-sans text-lg font-semibold text-gray-600">New width and height: <span id="resizedWH"></span></p>
 
         </div>
 

@@ -8,6 +8,7 @@ function uploadMultiple(files) {
   for (let file of files) {
     // turn file into a dataURI
     let reader = new FileReader();
+
     let img = new Image();
     reader.onload = () => {
       console.log('reader loaded')
@@ -31,11 +32,17 @@ function uploadMultiple(files) {
         // console.log('finished.')
         // add an image tag to #imagePreviews 
         let newImage = new Image()
+        let figure = document.createElement("figure");
+        let figCap = document.createElement("figcaption");
+        figCap.innerText = file.name;
+        figure.appendChild(figCap);
         newImage = document.createElement("img")
-        newImage.src = canvas.toDataURL("img/png")
+        newImage.classList.add("max-w-full")
+        newImage.setAttribute("src", canvas.toDataURL("img/png"));
+        figure.insertBefore(newImage, figCap);
         // remove canvas element
         document.body.removeChild(canvas)
-        imagePreviews.appendChild(newImage)
+        imagePreviews.appendChild(figure)
 
   
       }

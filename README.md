@@ -10,6 +10,7 @@ Some examples of simple ways to manipulate images using HTML5 canvas and javascr
 - drawing on html5 canvas, copying to an image tag and downloading
 - upload 1 file and resize the image
 - uploading and previewing multiple files
+- uploading and resizing multiple files
 
 ## Built With
 
@@ -22,7 +23,7 @@ Install tailwind
 `npm install`
 
 To watch and reload styles:
-`npx tailwindcss -i ./main.css -o ./dist/output.css --watch`
+`npx tailwindcss -i ./src/main.css -o ./dist/output.css --watch`
 
 ## Acknowledgements
 

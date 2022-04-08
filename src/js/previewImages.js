@@ -11,8 +11,7 @@
         for(i of fileInput.files) {
           let reader = new FileReader();
           let figure = document.createElement("figure");
-          let figCap = document.createElement("figcaption")
-          ;
+          let figCap = document.createElement("figcaption");
           figCap.innerText = i.name;
           figure.appendChild(figCap);
           reader.onload=() => {
